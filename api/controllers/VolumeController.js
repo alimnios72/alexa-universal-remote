@@ -1,6 +1,3 @@
-/**
- * Created by jorge on 4/1/18.
- */
 'use strict';
 
 var os = require('child_process');
@@ -40,3 +37,5 @@ module.exports = {
     //     volumeDown: changeVolumeDown
     // }
 };
+// tell universal remote to turn t.v. on
+// tell universal remote to increase volume by 5

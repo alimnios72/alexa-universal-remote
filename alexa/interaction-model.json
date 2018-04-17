@@ -1,0 +1,98 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "universal remote",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "how to use it",
+                        "give me help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "changeStatus",
+                    "slots": [
+                        {
+                            "name": "tvStatus",
+                            "type": "powerStatus"
+                        }
+                    ],
+                    "samples": [
+                        "turn t.v. {tvStatus}"
+                    ]
+                },
+                {
+                    "name": "changeVolume",
+                    "slots": [
+                        {
+                            "name": "audioStatus",
+                            "type": "audioVolume"
+                        },
+                        {
+                            "name": "audioLevel",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "{audioStatus} volume by {audioLevel}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "audioVolume",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "lower"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "raise"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "decrease"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "increase"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "powerStatus",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "off"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "on"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

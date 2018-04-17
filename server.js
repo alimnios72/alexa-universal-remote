@@ -1,13 +1,14 @@
-/**
- * Created by jorge on 4/1/18.
- */
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 3000;
+const express = require('express');
+const bodyParser = require('body-parser');
 
-var routes = require('./api/routes/main');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(bodyParser.json({ type: 'application/json' }));
+
+const routes = require("./api/routes/main");
 routes(app);
 
 app.listen(port);
 
-console.log('alexaremotecontroler started on: ' + port);
+console.log('Alexa Universal Remote started on: ' + port);
