@@ -1,0 +1,28 @@
+{
+  "name": "alexa-universal-remote",
+  "version": "1.0.0",
+  "description": "This application listen for Alexa skills events and maps them to IR remote signals by using lirc lib.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "alexa",
+    "remote",
+    "control",
+    "ir",
+    "raspberry",
+    "pi"
+  ],
+  "author": "Jorge Zapata <jorge.zapata@jazg.net>",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "^1.0.25",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.0"
+  }
+}
