@@ -31,7 +31,7 @@ const handlers = {
             speech = 'Ok, raising volume by ' + slots.audioLevel.value;
             volumeController.volumeUp(slots.audioLevel.value);
         }
-        else if (slots.audioStatus.value === 'lower') { //|| slots.audioStatus.value === 'decrease'
+        else if (slots.audioStatus.value === 'lower'|| slots.audioStatus.value === 'decrease') {
             speech = 'Ok, lowering volume by ' + slots.audioLevel.value;
             volumeController.volumeDown(slots.audioLevel.value);
         }
