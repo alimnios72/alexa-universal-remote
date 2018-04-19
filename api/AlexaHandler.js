@@ -2,6 +2,7 @@
 
 const Alexa = require('alexa-sdk');
 const fs = require('fs');
+const volumeController = require('./controllers/VolumeController');
 
 exports.handler = function(event, context, callback) {
     const alexa = Alexa.handler(event, context, callback);
@@ -28,9 +29,11 @@ const handlers = {
         let slots = this.event.request.intent.slots;
         if (slots.audioStatus.value === 'increase' || slots.audioStatus.value === 'raise') {
             speech = 'Ok, raising volume by ' + slots.audioLevel.value;
+            volumeController.volumeUp(slots.audioLevel.value);
         }
         else if (slots.audioStatus.value === 'lower') { //|| slots.audioStatus.value === 'decrease'
             speech = 'Ok, lowering volume by ' + slots.audioLevel.value;
+            volumeController.volumeDown(slots.audioLevel.value);
         }
         
         this.emit(':tell', speech);
