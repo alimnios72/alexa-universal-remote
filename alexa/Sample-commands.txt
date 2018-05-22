@@ -1,0 +1,4 @@
+- tell universal remote to turn t.v. on
+- tell universal remote to turn t.v. off
+- tell universal remote to increase volume by 5
+- tell universal remote to decrease volume by 5
