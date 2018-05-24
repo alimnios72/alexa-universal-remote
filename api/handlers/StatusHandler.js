@@ -9,10 +9,10 @@ function handleStatusChange(handlerInput) {
     let speechText;
 
     if (tvStatus.value === 'on'){
-        speechText = 'You got it, bitch!';
+        speechText = `You got it, <say-as interpret-as="interjection">bitsh</say-as>`;
     }
     else if (tvStatus.value === 'off') {
-        speechText = 'See you later, sucker!';
+        speechText = `Smell you later, <emphasis level="strong">sucker!</emphasis>`;
     }
     RemoteController.sendCommand(RemoteController.keys.Power);
    

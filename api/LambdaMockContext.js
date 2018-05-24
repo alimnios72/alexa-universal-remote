@@ -1,4 +1,5 @@
 'use strict';
+
 const uuid = require('uuid');
 const moment = require('moment');
 const defer = require('pinkie-defer');

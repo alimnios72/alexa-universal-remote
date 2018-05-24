@@ -5,7 +5,13 @@ const COMMAND_DELAY = 500;
 const KEY_MAP = {
     Power: 'KEY_POWER',
     VolumeUp: 'KEY_VOLUMEUP',
-    VolumeDown: 'KEY_VOLUMEDOWN'
+    VolumeDown: 'KEY_VOLUMEDOWN',
+    InputDialog: 'KEY_CYCLEWINDOWS',
+    Up: 'KEY_UP',
+    Down: 'KEY_DOWN',
+    ChannelUp: 'KEY_CHANNELUP',
+    ChannelDown: 'KEY_CHANNELDOWN',
+    Enter: 'KEY_ENTER'
 };
 
 

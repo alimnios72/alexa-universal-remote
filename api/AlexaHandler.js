@@ -1,9 +1,10 @@
 'use strict';
 
 const Alexa = require('ask-sdk-core');
-const VolumeHandler = require('./handlers/VolumeHandler');
+const ChannelHandler = require('./handlers/ChannelHandler');
+const InputHandler = require('./handlers/InputHandler');
 const StatusHandler = require('./handlers/StatusHandler');
-
+const VolumeHandler = require('./handlers/VolumeHandler');
 
 const ErrorHandler = {
     canHandle() {
@@ -28,6 +29,8 @@ exports.handler = async function (event, context) {
         skill = Alexa.SkillBuilders.custom()
         .addRequestHandlers(StatusHandler)
         .addRequestHandlers(VolumeHandler)
+        .addRequestHandlers(ChannelHandler)
+        .addRequestHandlers(InputHandler)
         .addErrorHandlers(ErrorHandler)
         .create();
     }

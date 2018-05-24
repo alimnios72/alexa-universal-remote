@@ -1,20 +1,18 @@
 'use strict';
 
 const RemoteController = require('../RemoteController');
-const DECREASE_COMMANDS = ['lower', 'decrease'];
-const INCREASE_COMMANDS = ['rise', 'increase']; 
 
 function handleVolumeChange(handlerInput) {
     const { requestEnvelope, responseBuilder } = handlerInput;
     const { intent } = requestEnvelope.request;
     const audioStatus = intent.slots.audioStatus;
     const audioLevel = intent.slots.audioLevel;
-    const speechText = `Oh yeah! You have ${audioStatus.value} the volume by ${audioLevel.value}`;
+    const speechText = `<say-as interpret-as="interjection">Aww yeah.</say-as> You have ${audioStatus.value} the volume by <say-as interpret-as="ordinal">${audioLevel.value}</say-as>`;
 
-    if (INCREASE_COMMANDS.includes(audioStatus.value)) {
+    if (audioStatus.value === 'increase') {
         RemoteController.sendCommand(RemoteController.keys.VolumeUp, audioLevel.value);
     }
-    else if (DECREASE_COMMANDS.includes(audioStatus.value)) {
+    else if (audioStatus.value === 'decrease') {
         RemoteController.sendCommand(RemoteController.keys.VolumeDown, audioLevel.value);
     }
     return handlerInput.responseBuilder
